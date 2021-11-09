@@ -11,40 +11,40 @@ public class ThreadService {
 
 	public void example1() {
 		
-		// Thread Å¬·¡½º¸¦ »ó¼Ó ¹ŞÀº °´Ã¼¸¦ »ı¼º
+		// Thread í´ë˜ìŠ¤ë¥¼ ìƒì† ë°›ì€ ê°ì²´ë¥¼ ìƒì„±
 		ThreadEx1 th1 = new ThreadEx1();
 		//th1.run(); 
-		// Thread¸¦ »ó¼Ó ¹ŞÀº °´Ã¼¸¦ º°µµÀÇ ½º·¹µå¿¡¼­ ½ÇÇàÇÏ±â À§ÇØ¼­´Â
-		// º¯¼ö¸í.start(); ¸Ş¼Òµå¸¦ È£ÃâÇØ¾ß ÇÑ´Ù.
-		// -> start() È£Ãâ ½Ã º°µµ ½º·¹µå°¡ »ı¼ºµÇ¸ç run()¿¡ ÀÛ¼ºµÈ ³»¿ëÀÌ ½ÇÇàµÈ´Ù.
+		// Threadë¥¼ ìƒì† ë°›ì€ ê°ì²´ë¥¼ ë³„ë„ì˜ ìŠ¤ë ˆë“œì—ì„œ ì‹¤í–‰í•˜ê¸° ìœ„í•´ì„œëŠ”
+		// ë³€ìˆ˜ëª….start(); ë©”ì†Œë“œë¥¼ í˜¸ì¶œí•´ì•¼ í•œë‹¤.
+		// -> start() í˜¸ì¶œ ì‹œ ë³„ë„ ìŠ¤ë ˆë“œê°€ ìƒì„±ë˜ë©° run()ì— ì‘ì„±ëœ ë‚´ìš©ì´ ì‹¤í–‰ëœë‹¤.
 		th1.start();
 		
 		
-		// Runnable ÀÎÅÍÆäÀÌ½º¸¦ »ó¼Ó ¹ŞÀº °´Ã¼ »ı¼º
+		// Runnable ì¸í„°í˜ì´ìŠ¤ë¥¼ ìƒì† ë°›ì€ ê°ì²´ ìƒì„±
 		ThreadEx2 th2 = new ThreadEx2();
 		//th2.run();
-		// Runnable ÀÎÅÍÆäÀÌ½º¸¦ ±¸ÇöÇÑ °´Ã¼´Â start() ¸Ş¼Òµå°¡ Á¸ÀçÇÏÁö ¾ÊÀ½.
-		// ¿Ö? start()´Â Thread Å¬·¡½ºÀÇ ¸Ş¼Òµå
-		// -> Thread Å¬·¡½º °´Ã¼¸¦ »ı¼ºÇÒ ¶§ »ı¼ºÀÚ ¸Å°³º¯¼ö·Î
-		//    Runnable ÀÎÅÍÆäÀÌ½º¸¦ ±¸ÇöÇÑ °´Ã¼¸¦ Ãß°¡ÇÏ¿© »ı¼ºÇÏ¸é start() °¡´É
+		// Runnable ì¸í„°í˜ì´ìŠ¤ë¥¼ êµ¬í˜„í•œ ê°ì²´ëŠ” start() ë©”ì†Œë“œê°€ ì¡´ì¬í•˜ì§€ ì•ŠìŒ.
+		// ì™œ? start()ëŠ” Thread í´ë˜ìŠ¤ì˜ ë©”ì†Œë“œ
+		// -> Thread í´ë˜ìŠ¤ ê°ì²´ë¥¼ ìƒì„±í•  ë•Œ ìƒì„±ì ë§¤ê°œë³€ìˆ˜ë¡œ
+		//    Runnable ì¸í„°í˜ì´ìŠ¤ë¥¼ êµ¬í˜„í•œ ê°ì²´ë¥¼ ì¶”ê°€í•˜ì—¬ ìƒì„±í•˜ë©´ start() ê°€ëŠ¥
 		
-		Thread thread = new Thread(th2, "½º·¹µå2");
-										// -> ½º·¹µå ÀÌ¸§ ÁöÁ¤
+		Thread thread = new Thread(th2, "ìŠ¤ë ˆë“œ2");
+										// -> ìŠ¤ë ˆë“œ ì´ë¦„ ì§€ì •
 		thread.start();
 	}
 	
 	
 	public void example2() {
-		// ½º·¹µå ¿ì¼± ¼øÀ§ È®ÀÎ
+		// ìŠ¤ë ˆë“œ ìš°ì„  ìˆœìœ„ í™•ì¸
 		
-		// for¹®À» 20¹ø ¹İº¹ÇØ¼­ ThreadEx3¸¦ ÀÌ¿ëÇØ ¸¸µç Thread °´Ã¼ 20°³ »ı¼º
-		// --> main ½º·¹µå 1°³ + »ı¼ºµÈ ½º·¹µå 20 == ÃÑ 21°³ ½º·¹µå
+		// forë¬¸ì„ 20ë²ˆ ë°˜ë³µí•´ì„œ ThreadEx3ë¥¼ ì´ìš©í•´ ë§Œë“  Thread ê°ì²´ 20ê°œ ìƒì„±
+		// --> main ìŠ¤ë ˆë“œ 1ê°œ + ìƒì„±ëœ ìŠ¤ë ˆë“œ 20 == ì´ 21ê°œ ìŠ¤ë ˆë“œ
 		
 		for(int i=1 ; i<= 20; i++) {
-			ThreadEx3 th3 = new ThreadEx3(); // ÀÌ»óÅÂ·Î´Â start() ºÒ°¡´É
-			Thread thread = new Thread(th3 , "½º·¹µå" + i );
+			ThreadEx3 th3 = new ThreadEx3(); // ì´ìƒíƒœë¡œëŠ” start() ë¶ˆê°€ëŠ¥
+			Thread thread = new Thread(th3 , "ìŠ¤ë ˆë“œ" + i );
 			
-			if(i == 10) { // 10¹øÂ°·Î ¸¸µé¾îÁø ½º·¹µå°¡ ÃÖ¿ì¼± ¼øÀ§¸¦ °¡Áú ¼ö ÀÖµµ·Ï ¼³Á¤
+			if(i == 10) { // 10ë²ˆì§¸ë¡œ ë§Œë“¤ì–´ì§„ ìŠ¤ë ˆë“œê°€ ìµœìš°ì„  ìˆœìœ„ë¥¼ ê°€ì§ˆ ìˆ˜ ìˆë„ë¡ ì„¤ì •
 				thread.setPriority(Thread.MAX_PRIORITY); // == 10
 			
 			}else {
@@ -57,28 +57,28 @@ public class ThreadService {
 	
 	
 	public void example3() {
-		// ½º·¹µå ÄÁÆ®·Ñ(sleep() , interrupt() )
+		// ìŠ¤ë ˆë“œ ì»¨íŠ¸ë¡¤(sleep() , interrupt() )
 		
-		Thread t1 = new Thread(new ThreadEx4(3), "1¹ø");
-		Thread t2 = new Thread(new ThreadEx4(7), "2¹ø");
-		Thread t3 = new Thread(new ThreadEx4(20), "3¹ø");
+		Thread t1 = new Thread(new ThreadEx4(3), "1ë²ˆ");
+		Thread t2 = new Thread(new ThreadEx4(7), "2ë²ˆ");
+		Thread t3 = new Thread(new ThreadEx4(20), "3ë²ˆ");
 		
-		System.out.println("½ÃÀÛ");
+		System.out.println("ì‹œì‘");
 		//t1.start();
 		//t2.start();
 		t3.start();
 		
 		Scanner sc = new Scanner(System.in);
-		System.out.print("¾Æ¹« °ªÀÌ³ª ÀÔ·ÂÇÏ¼¼¿ä : ");
+		System.out.print("ì•„ë¬´ ê°’ì´ë‚˜ ì…ë ¥í•˜ì„¸ìš” : ");
 		String input = sc.next();
-		// Å°º¸µå ÀÔ·ÂÀÌ µÉ ¶§ ±îÁö main½º·¹µå´Â ¹«ÇÑ ´ë±â »óÅÂ
-		// -> °ª ÀÔ·Â ½Ã ¾Æ·¡ ÄÚµå°¡ ¼öÇàµÇ±â ½ÃÀÛ
+		// í‚¤ë³´ë“œ ì…ë ¥ì´ ë  ë•Œ ê¹Œì§€ mainìŠ¤ë ˆë“œëŠ” ë¬´í•œ ëŒ€ê¸° ìƒíƒœ
+		// -> ê°’ ì…ë ¥ ì‹œ ì•„ë˜ ì½”ë“œê°€ ìˆ˜í–‰ë˜ê¸° ì‹œì‘
 		
-		t3.interrupt(); // ¾Æ¹« °ªÀÌ³ª ÀÔ·Â ¹ŞÀ¸¸é t3 ½º·¹µå µ¿ÀÛÀ» ¸ØÃã
+		t3.interrupt(); // ì•„ë¬´ ê°’ì´ë‚˜ ì…ë ¥ ë°›ìœ¼ë©´ t3 ìŠ¤ë ˆë“œ ë™ì‘ì„ ë©ˆì¶¤
 		
 		// boolean isInterrupted() : 
-		// ÇöÀç ½º·¹µå°¡ interrupt() ¸Ş¼Òµå¿¡ ÀÇÇØ¼­ ¸ØÃè´ÂÁö È®ÀÎ
-		// ¸ØÃèÀ¸¸é true / ¾Æ´Ï¸é false
+		// í˜„ì¬ ìŠ¤ë ˆë“œê°€ interrupt() ë©”ì†Œë“œì— ì˜í•´ì„œ ë©ˆì·„ëŠ”ì§€ í™•ì¸
+		// ë©ˆì·„ìœ¼ë©´ true / ì•„ë‹ˆë©´ false
 		System.out.println(t1.isInterrupted() ); // false
 		System.out.println(t2.isInterrupted() ); // false
 		System.out.println(t3.isInterrupted() ); // true

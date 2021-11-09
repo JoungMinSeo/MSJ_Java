@@ -2,14 +2,14 @@ package edu.kh.th.ex.model.thread;
 
 public class ThreadEx4 implements Runnable{
 
-	// Thread.sleep(Áö¿¬½Ã°£(ms)) : ÁöÁ¤µÈ ½Ã°£µ¿¾È ½º·¹µå¸¦ ÀÏ½Ã Á¤Áö ½ÃÅ°´Â ¸Ş¼Òµå
-	// - staticÀ¸·Î ¼±¾ğ µÇ¾î ÀÖ¾î¼­ Thread.sleep(Áö¿¬½Ã°£(ms)) ¸ğ¾çÀ¸·Î È£Ãâ
-	// - sleep()Àº ÀÎÅÍ·´Æ® µ¿ÀÛ(´Ù¸¥ ÇàÀ§¸¦ ¹«½ÃÇÏ°í ÃÖ¿ì¼± µ¿ÀÛ) Áß ÇÏ³ª·Î
-	//   InterruptedExceptionÀ» ¹ß»ıÇÒ °¡´É¼ºÀÌ ÀÖ´Ù. -> ¿¹¿Ü Ã³¸® ÇÊ¿ä
+	// Thread.sleep(ì§€ì—°ì‹œê°„(ms)) : ì§€ì •ëœ ì‹œê°„ë™ì•ˆ ìŠ¤ë ˆë“œë¥¼ ì¼ì‹œ ì •ì§€ ì‹œí‚¤ëŠ” ë©”ì†Œë“œ
+	// - staticìœ¼ë¡œ ì„ ì–¸ ë˜ì–´ ìˆì–´ì„œ Thread.sleep(ì§€ì—°ì‹œê°„(ms)) ëª¨ì–‘ìœ¼ë¡œ í˜¸ì¶œ
+	// - sleep()ì€ ì¸í„°ëŸ½íŠ¸ ë™ì‘(ë‹¤ë¥¸ í–‰ìœ„ë¥¼ ë¬´ì‹œí•˜ê³  ìµœìš°ì„  ë™ì‘) ì¤‘ í•˜ë‚˜ë¡œ
+	//   InterruptedExceptionì„ ë°œìƒí•  ê°€ëŠ¥ì„±ì´ ìˆë‹¤. -> ì˜ˆì™¸ ì²˜ë¦¬ í•„ìš”
 	
-	private int count; // ÇÊµå ¼±¾ğ
+	private int count; // í•„ë“œ ì„ ì–¸
 	 
-	public ThreadEx4(int count) { // ¸Å°³º¯¼ö ÀÖ´Â »ı¼ºÀÚ
+	public ThreadEx4(int count) { // ë§¤ê°œë³€ìˆ˜ ìˆëŠ” ìƒì„±ì
 		super();
 		this.count = count;
 	}
@@ -17,27 +17,27 @@ public class ThreadEx4 implements Runnable{
 
 	@Override
 	public void run() {
-		// count¿¡ ÁöÁ¤µÇ ¼ö ¸¸Å­ for¹® ¹İº¹
-		// 1È¸ ¹İº¹´ç 1ÃÊ µô·¹ÀÌ
+		// countì— ì§€ì •ë˜ ìˆ˜ ë§Œí¼ forë¬¸ ë°˜ë³µ
+		// 1íšŒ ë°˜ë³µë‹¹ 1ì´ˆ ë”œë ˆì´
 		
 		try {
 			
 			for(int i=1 ; i<=count ; i++) {
-				Thread.sleep(1000); // 1000ms == 1ÃÊ
-				// sleep()À¸·Î ½º·¹µå°¡ ÀÏ½Ã Á¤Áö µÇ¾îÀÖ´Â µ¿¾È
-				// interrupt() ¸Ş¼Òµå¿¡ ÀÇÇØ Á¤ÁöÇÏ¶ó´Â ±â´ÉÀÌ µ¿ÀÛÇÏ¸é
-				// sleep() ÀÌ InterruptedExceptionÀ» ¹ß»ı½ÃÅ´
+				Thread.sleep(1000); // 1000ms == 1ì´ˆ
+				// sleep()ìœ¼ë¡œ ìŠ¤ë ˆë“œê°€ ì¼ì‹œ ì •ì§€ ë˜ì–´ìˆëŠ” ë™ì•ˆ
+				// interrupt() ë©”ì†Œë“œì— ì˜í•´ ì •ì§€í•˜ë¼ëŠ” ê¸°ëŠ¥ì´ ë™ì‘í•˜ë©´
+				// sleep() ì´ InterruptedExceptionì„ ë°œìƒì‹œí‚´
 				
-				System.out.println( Thread.currentThread().getName()  + " : " + i + "ÃÊ"   );                      
+				System.out.println( Thread.currentThread().getName()  + " : " + i + "ì´ˆ"   );                      
 			}
 			
-			System.out.println(Thread.currentThread().getName() + " ½º·¹µå Á¾·á" );
+			System.out.println(Thread.currentThread().getName() + " ìŠ¤ë ˆë“œ ì¢…ë£Œ" );
 			
 		}catch (InterruptedException e) {
 			//e.printStackTrace();
 			
 			Thread.currentThread().interrupt();
-			// interrupt()¸¦ ÀÌ¿ëÇØ Á¤»óÀûÀ¸·Î ½º·¹µå¸¦ ¸ØÃã.
+			// interrupt()ë¥¼ ì´ìš©í•´ ì •ìƒì ìœ¼ë¡œ ìŠ¤ë ˆë“œë¥¼ ë©ˆì¶¤.
 			
 			System.out.println("@@@ " + Thread.currentThread().isInterrupted()); // true
 		}

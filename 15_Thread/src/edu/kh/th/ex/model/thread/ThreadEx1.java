@@ -1,40 +1,33 @@
 package edu.kh.th.ex.model.thread;
 
-// º°µµ ½º·¹µå »ý¼ºÀ» À§ÇÑ Å¬·¡½º
-// º°µµ ½º·¹µå »ý¼º == ´Ù¸¥ ½º·¹µå¿Í µ¿½Ã¿¡ ÄÚµå°¡ ¼öÇàµÈ´Ù
+// ë³„ë„ ìŠ¤ë ˆë“œ ìƒì„±ì„ ìœ„í•œ í´ëž˜ìŠ¤
+// ë³„ë„ ìŠ¤ë ˆë“œ ìƒì„± == ë‹¤ë¥¸ ìŠ¤ë ˆë“œì™€ ë™ì‹œì— ì½”ë“œê°€ ìˆ˜í–‰ëœë‹¤
 public class ThreadEx1 extends Thread{
 
 		
-	// ½º·¹µå »ý¼º ¹æ¹ý 1. Thread Å¬·¡½º »ó¼Ó
-	// *** Thread »ó¼Ó ½Ã »ó¼Ó ¹ÞÀº ¸Þ¼Òµå Áß run() ¸Þ¼Òµå¸¦ ¿À¹ö¶óÀÌµù ÇØ¾ßÇÑ´Ù.
+	// ìŠ¤ë ˆë“œ ìƒì„± ë°©ë²• 1. Thread í´ëž˜ìŠ¤ ìƒì†
+	// *** Thread ìƒì† ì‹œ ìƒì† ë°›ì€ ë©”ì†Œë“œ ì¤‘ run() ë©”ì†Œë“œë¥¼ ì˜¤ë²„ë¼ì´ë”© í•´ì•¼í•œë‹¤.
 	
 	@Override
 	public void run() {
-		// run() ¸Þ¼Òµå : ½º·¹µå°¡ »ý¼º µÇ¼­ º°µµ·Î ÀÛ¾÷ÇÏ°íÀÚ ÇÏ´Â ÄÚµå¸¦ ÀÛ¼ºÇÏ´Â ¸Þ¼Òµå
+		// run() ë©”ì†Œë“œ : ìŠ¤ë ˆë“œê°€ ìƒì„± ë˜ì„œ ë³„ë„ë¡œ ìž‘ì—…í•˜ê³ ìž í•˜ëŠ” ì½”ë“œë¥¼ ìž‘ì„±í•˜ëŠ” ë©”ì†Œë“œ
 		
 		for(int i=1 ; i<=200 ; i++) {
 			System.out.print("O");
 			
-			// "O" ¹®ÀÚ°¡ 20¹ø Ãâ·Â µÉ ¶§ ¸¶´Ù ÁÙ¹Ù²Þ
+			// "O" ë¬¸ìžê°€ 20ë²ˆ ì¶œë ¥ ë  ë•Œ ë§ˆë‹¤ ì¤„ë°”ê¿ˆ
 			if(i % 20 == 0) {
 				System.out.println();
 			}
 		}
 
-		// Thread.setName("½º·¹µå¸í") : ½º·¹µå ÀÌ¸§ ÁöÁ¤
-		setName("½º·¹µå1¹ø"); // »ó¼Ó ¹ÞÀº °ÍÀÌ±â ¶§¹®¿¡ ¹Ù·Î »ç¿ë °¡´É!
+		// Thread.setName("ìŠ¤ë ˆë“œëª…") : ìŠ¤ë ˆë“œ ì´ë¦„ ì§€ì •
+		setName("ìŠ¤ë ˆë“œ1ë²ˆ"); // ìƒì† ë°›ì€ ê²ƒì´ê¸° ë•Œë¬¸ì— ë°”ë¡œ ì‚¬ìš© ê°€ëŠ¥!
 		
-		// Thread.getName() : ½º·¹µå ÀÌ¸§ ¹ÝÈ¯
-		System.out.println( getName() + " Ãâ·Â ¿Ï·á");
+		// Thread.getName() : ìŠ¤ë ˆë“œ ì´ë¦„ ë°˜í™˜
+		System.out.println( getName() + " ì¶œë ¥ ì™„ë£Œ");
 		
 	}
 	
 	
-	
-	
-	
-	
 }
-
-
-
