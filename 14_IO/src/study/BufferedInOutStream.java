@@ -38,11 +38,12 @@ public class BufferedInOutStream {
 			out.flush(); // 파일 내용이 버퍼에만 남고 파일에는 쓰이지 않는 상황을 방지
 			copyByte++;
 
-			System.out.println("==============================================");
-			System.out.println("CPU 사용률 : " + String.format("%.2f", osBean.getSystemCpuLoad() * 100));
-			System.out.println("메모리 잔여량 : " + String.format("%.3f", (double) osBean.getFreePhysicalMemorySize() / 1024 / 1024));
-			System.out.println("물리 메모리량 : " + String.format("%.3f", (double) osBean.getTotalPhysicalMemorySize() / 1024 / 1024));
-
+			
+			  System.out.println("==============================================");
+			  System.out.println("CPU 사용률 : " + String.format("%.2f",osBean.getSystemCpuLoad() * 100)); 
+			  System.out.println("메모리 잔여량 : " + String.format("%.3f", (double) osBean.getFreePhysicalMemorySize() / 1024 /1024)); 
+			  System.out.println("물리 메모리량 : " + String.format("%.3f", (double)osBean.getTotalPhysicalMemorySize() / 1024 / 1024));
+			 
 		}
 
 		long endTime = System.currentTimeMillis(); // 성능 테스트 끝난 시간
@@ -57,7 +58,7 @@ public class BufferedInOutStream {
 	}
 
 	// CPU 사용률 : 평균 19%
-	// Memory 사용률 : 15MB 
+	// Memory 사용률 : 20MB 
 	// 소요 시간 : 102ms
 	
 	// ===========================================================================================
@@ -67,7 +68,6 @@ public class BufferedInOutStream {
 	// -> CPU는 1초에 100개의 데이터를 처리할 수 있지만 HDD는 데이터를 아무리 빨라도 CPU의 속도를 따라가지 못하기 때문에
 	// -> HDD -> 버퍼에 데이터를 쌓아둠 -> 다른 할일을 찾아 처리하다가 버퍼에 데이터가 어느정도 쌓이면 한꺼번에 가져와서 처리
 	// BufferedInputStream(InputStream in) 버퍼의 크기를 지정해주지 않으므로 기본적으로 8192byte크기의 버퍼를 갖게 된다.
-	// 
 	
 	
 
