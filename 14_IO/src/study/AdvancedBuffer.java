@@ -53,9 +53,9 @@ public class AdvancedBuffer implements Runnable{
 		System.out.println("---------------버퍼 스트림 전송시간--------------------");
 		System.out.println("소요시간 : " + (endTime - startTime) + "ms");
 		
-		// CPU 사용률 : 평균 12.46% 사용
-		// Memory 사용률 : 평균 28,208 KB 사용
-		// 소요 시간 : 48754ms 
+		// CPU 사용률 : 평균 12.21% 사용
+		// Memory 사용률 : 평균 28,596 KB 사용
+		// 소요 시간 : 97307ms 
 		
 		
 		// ===========================================================================================

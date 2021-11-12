@@ -52,9 +52,9 @@ public class AdvancedIOUtils implements Runnable{
 			System.out.println("소요시간 : " + (endTime-startTime) + "ms");
 			System.out.println("--------------- 스트림 전송시간--------------------");
 			
-			// CPU 사용률 : 평균 12.46% 사용
-			// Memory 사용률 : 평균 28,208 KB 사용
-			// 소요 시간 : 48754ms 
+			// CPU 사용률 : 평균 10.75% 사용
+			// Memory 사용률 : 평균 31,752 KB 사용
+			// 소요 시간 : 13123ms 
 			
 			// ===========================================================================================
 			// Commons IO = 아파치 소프트웨어 재단에서 제공하는 자바 기반의 IO관련 오픈소스
