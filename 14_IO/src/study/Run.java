@@ -27,7 +27,7 @@ public class Run {
 				
 				System.out.println("***********************************************************");
 				System.out.println("CPU 사용률 : " + String.format("%.2f", osBean.getSystemCpuLoad() * 100));
-				System.out.println("메모리 잔여량 : " + String.format("%.0f", (double)osBean.getFreePhysicalMemorySize()  ));
+				System.out.println("메모리 잔여량 : " + String.format("%.3f", (double)osBean.getFreePhysicalMemorySize()  ));
 				System.out.println("전체 물리메모리량 : " + String.format("%.3f", (double)osBean.getTotalPhysicalMemorySize()/1024/1024/1024  ));
 				System.out.println("메모리 사용량 : " + String.format("%.3f", ((double)osBean.getTotalPhysicalMemorySize() - (double)osBean.getFreePhysicalMemorySize())/1024/1024/1024));
 				
