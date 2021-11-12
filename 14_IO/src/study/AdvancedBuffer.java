@@ -34,7 +34,6 @@ public class AdvancedBuffer implements Runnable{
 				if (data == -1)
 					break;
 				bout.write(data);
-				out.flush(); // 파일 내용이 버퍼에만 남고 파일에는 쓰이지 않는 상황을 방지
 			}
 		} catch (FileNotFoundException e) { // 파일을 찾지 못했을 경우
 			e.printStackTrace();
@@ -42,6 +41,7 @@ public class AdvancedBuffer implements Runnable{
 			e.printStackTrace();
 		}finally {
 			try {
+				out.flush(); // 파일 내용이 버퍼에만 남고 파일에는 쓰이지 않는 상황을 방지
 				in.close();
 				out.close();
 			} catch (IOException e) {  // stream을 닫을 때 에러 발생의 경우
