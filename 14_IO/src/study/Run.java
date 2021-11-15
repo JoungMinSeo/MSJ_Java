@@ -16,14 +16,18 @@ public class Run {
 		Thread t1 = new Thread(stream);
 		Thread t2 = new Thread(buffer);
 		Thread t3 = new Thread(utils);
+		// 데몬 스래드로 설정
+		t1.setDaemon(true);
+		t2.setDaemon(true);
+		t3.setDaemon(true); 
 		
 		try{
 			OperatingSystemMXBean osBean = ManagementFactory.getPlatformMXBean(OperatingSystemMXBean.class);
-			// t1.start();
-			// t2.start();
-			t3.start();
+			t1.start();
+			//t2.start();
+			//t3.start();
 			
-			while(t3.getState() == Thread.State.RUNNABLE){
+			while(t1.getState() == Thread.State.RUNNABLE){
 				
 				System.out.println("***********************************************************");
 				System.out.println("CPU 사용률 : " + String.format("%.2f", osBean.getSystemCpuLoad() * 100));
