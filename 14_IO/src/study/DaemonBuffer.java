@@ -6,13 +6,10 @@ import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
 
-public class DaemonBuffer {
+public class DaemonBuffer  extends Thread{
 
-	public static void main(String[] args) {
-		
-		Daemon daemon = new Daemon();
-	 	daemon.setDaemon(true);        //daemon를 데몬 스레드로 만듬
-	 	daemon.start();
+		@Override
+    	public void run() {
 	 	
 	 	long startTime = System.currentTimeMillis(); // 성능 테스트 시작 시간
 		

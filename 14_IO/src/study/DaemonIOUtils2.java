@@ -8,12 +8,10 @@ import java.io.OutputStream;
 
 import org.apache.commons.io.IOUtils;
 
-public class DaemonIOUtils2 {
+public class DaemonIOUtils2 extends Thread {
 
-	 public static void main(String[] args) {
-		 	Daemon daemon = new Daemon();
-		 	daemon.setDaemon(true);        //daemon를 데몬 스레드로 만듬
-		 	daemon.start();
+		@Override
+		public void run() {
 			
 			long startTime = System.currentTimeMillis(); // 성능 테스트 시작 시간
 			
