@@ -22,6 +22,7 @@ public class Example6 {
 		Arrays.sort(arr);
 		System.out.println("가장 작은 수 " + arr[0] + "\n가장 큰 수 : " + arr[input - 1]);
 		
+		
 	}
 	
 }
